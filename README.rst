@@ -77,7 +77,7 @@ Future Work
 - Uncomment cpplint from tox.ini and cleanup C++ code
 - Generalize the threading model (currently it uses 8 threads---one for each quadrant)
 
-Jan 6, 2026: Modernized to support Python 3.9+ and includes support for non-ASCII directory names
+Modernized to support Python 3.9+ and includes support for non-ASCII directory names.
 
 Other Resources
 ---------------
