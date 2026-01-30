@@ -102,7 +102,10 @@ needs_build = any(cmd in sys.argv for cmd in build_commands)
 is_metadata_only = any(cmd in sys.argv for cmd in metadata_commands)
 
 if needs_build and not is_metadata_only:
+    # All package metadata (name, version, description, etc.) is defined in pyproject.toml.
+    # setuptools reads that metadata automatically; here we only add the compiled extension.
     setup(ext_modules=[get_extension()])
 else:
-    # For metadata-only commands, don't require numpy
+    # For metadata-only commands, don't require numpy.
+    # Metadata is still taken from pyproject.toml via setuptools.
     setup()
